@@ -1,1 +1,68 @@
+.scanner-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
 
+.instruction {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.camera-viewport {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto 20px auto;
+}
+
+.status-banner {
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.success { background-color: #d4edda; color: #155724; }
+.error { background-color: #f8d7da; color: #721c24; }
+
+.correction-container {
+  border-top: 2px solid #ecf0f1;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.sub-text {
+  font-size: 0.85rem;
+  color: #95a5a6;
+  margin-bottom: 15px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-grid input, .form-grid select {
+  padding: 9px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+}
+
+.btn-success {
+  padding: 10px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #2ecc71;
+}
