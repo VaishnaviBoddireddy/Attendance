@@ -27,7 +27,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/vercel.json"
+              "vercel.json"
             ],
             "styles": [
               "src/styles.css"
