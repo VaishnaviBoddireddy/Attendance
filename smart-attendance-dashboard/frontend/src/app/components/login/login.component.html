@@ -1,1 +1,36 @@
+<section class="login-wrapper">
+  <div class="login-card">
+    <h2>SRU Portal Login</h2>
+    <p class="subtitle">Access official portal at www.sru.edu.in</p>
 
+    <form (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label for="rollNumber">Roll Number</label>
+        <input 
+          id="rollNumber"
+          type="text" 
+          [(ngModel)]="rollNumber" 
+          name="rollNumber" 
+          required 
+          placeholder="e.g., 22SRU001">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          id="password"
+          type="password" 
+          [(ngModel)]="password" 
+          name="password" 
+          required 
+          placeholder="Enter password">
+      </div>
+
+      <button type="submit" class="btn-primary">Sign In</button>
+    </form>
+
+    <div *ngIf="errorMessage" class="error-alert">
+      {{ errorMessage }}
+    </div>
+  </div>
+</section>
