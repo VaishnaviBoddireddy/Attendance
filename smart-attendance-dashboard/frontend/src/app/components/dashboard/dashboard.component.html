@@ -1,1 +1,44 @@
+<section class="dashboard-wrapper">
+  <h2>Analytical Reports & Visual Graphs</h2>
+  
+  <div class="filter-controls">
+    <label>
+      Subject Hour:
+      <select [(ngModel)]="selectedHour" (change)="updateHourlyGraph()">
+        <option value="DBMS">DBMS Class</option>
+        <option value="OS">OS Class</option>
+      </select>
+    </label>
 
+    <label>
+      Date:
+      <input type="date" [(ngModel)]="selectedDate" (change)="updateHourlyGraph()">
+    </label>
+  </div>
+
+  <div class="chart-grid">
+    <!-- Hourly Basis Analytics Chart -->
+    <div class="chart-card">
+      <h3>Hourly Subject Graph</h3>
+      <p>Class: <strong>{{ selectedHour }}</strong> (Total Capacity: 50)</p>
+      <canvas baseChart 
+        [datasets]="hourlyChartData" 
+        [labels]="hourlyChartLabels" 
+        [options]="chartOptions" 
+        [type]="chartType">
+      </canvas>
+    </div>
+
+    <!-- Weekly and Monthly Average Chart -->
+    <div class="chart-card">
+      <h3>Weekly & Monthly Averages</h3>
+      <p>Average Attendance Metrics Across Sessions</p>
+      <canvas baseChart 
+        [datasets]="summaryChartData" 
+        [labels]="summaryChartLabels" 
+        [options]="chartOptions" 
+        [type]="chartType">
+      </canvas>
+    </div>
+  </div>
+</section>
