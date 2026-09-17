@@ -1,1 +1,35 @@
+<section class="scanner-card">
+  <h2>Live QR Attendance Scanner</h2>
+  <p class="instruction">Point camera at classroom projected QR code after logging in</p>
 
+  <div id="reader" class="camera-viewport"></div>
+
+  <div *ngIf="scanMessage" [class.success]="!isError" [class.error]="isError" class="status-banner">
+    {{ scanMessage }}
+  </div>
+
+  <div class="correction-container">
+    <h3>Attendance Correction Panel</h3>
+    <p class="sub-text">Correct attendance record for batch size 50</p>
+    
+    <div class="form-grid">
+      <input type="text" [(ngModel)]="correctionRoll" placeholder="Roll Number (e.g., 22SRU001)">
+      
+      <select [(ngModel)]="correctionSubject">
+        <option value="DBMS">DBMS Class</option>
+        <option value="OS">OS Class</option>
+        <option value="CN">Networks Class</option>
+      </select>
+
+      <input type="date" [(ngModel)]="correctionDate">
+
+      <select [(ngModel)]="correctionStatus">
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+        <option value="Corrected">Corrected</option>
+      </select>
+
+      <button (click)="applyCorrection()" class="btn-success">Update Record</button>
+    </div>
+  </div>
+</section>
