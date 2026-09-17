@@ -1,1 +1,44 @@
+<div class="student-container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <h2>{{ studentRecord.name }}</h2>
+      <span class="badge role-badge">{{ studentRecord.role }}</span>
+    </div>
+    <div class="profile-details">
+      <p><strong>Student ID:</strong> {{ studentRecord.id }}</p>
+      <p><strong>Overall Attendance:</strong> 
+        <span class="attendance-score">{{ studentRecord.totalAttendancePercentage }}%</span>
+      </p>
+      <p><strong>Total Late Entries:</strong> {{ studentRecord.totalLateEntries }}</p>
+    </div>
+  </div>
 
+  <div class="history-section">
+    <h3>Recent Check-Ins</h3>
+    <div class="table-responsive">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Scan Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let checkIn of recentCheckIns">
+            <td>{{ checkIn.date }}</td>
+            <td>{{ checkIn.time }}</td>
+            <td>
+              <span class="badge" 
+                    [ngClass]="{'status-present': checkIn.status === 'Present', 'status-late': checkIn.status === 'Late'}">
+                {{ checkIn.status }}
+              </span>
+            </td>
+            <td>{{ checkIn.scanMethod }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
