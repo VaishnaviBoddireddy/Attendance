@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import { AttendanceService } from '../../services/attendance.service';
 import {FormsModule} from '@angular/forms';
-`import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-qr-scanner',
   templateUrl: './qr-scanner.component.html',
