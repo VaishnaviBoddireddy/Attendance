@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { AttendanceService } from '../../services/attendance.service';
 import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import {FormsModule} from '@angular/Forms';
+import {FormsModule} from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   standalone: true,
-  imports: [BaseChartDirective],
-  imports: [FormsModule]
+  imports: [BaseChartDirective, FormsModule],
 })
 export class DashboardComponent implements OnInit {
 
