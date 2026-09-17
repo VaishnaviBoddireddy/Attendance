@@ -1,1 +1,100 @@
+.student-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: grid;
+  gap: 24px;
+}
 
+.profile-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.profile-header h2 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.profile-details p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.attendance-score {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.role-badge {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.status-present {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-late {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.history-section {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.history-section h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th, 
+.history-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.history-table th {
+  background-color: #f8f9fa;
+  color: #666;
+}
+
+.history-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
