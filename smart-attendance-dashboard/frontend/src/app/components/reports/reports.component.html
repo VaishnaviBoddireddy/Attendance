@@ -1,1 +1,27 @@
+<div class="reports-container">
+  <div class="reports-header">
+    <h2>{{ reportTitle }}</h2>
+    <button class="btn-export" (click)="exportReport()">Export Report</button>
+  </div>
 
+  <div class="reports-card">
+    <table class="reports-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Total Present</th>
+          <th>Total Absent</th>
+          <th>Late Entries</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of attendanceData">
+          <td>{{ record.date }}</td>
+          <td>{{ record.totalPresent }}</td>
+          <td>{{ record.totalAbsent }}</td>
+          <td class="late-text">{{ record.lateEntries }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
