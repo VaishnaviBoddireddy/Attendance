@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 @Component({
   selector: 'app-qr-scanner',
   templateUrl: './qr-scanner.component.html',
-  styleUrls: ['./qr-scanner.component.css']
+  styleUrls: ['./qr-scanner.component.css'],
   standalone: true,
   imports: [FormsModule]
 })
