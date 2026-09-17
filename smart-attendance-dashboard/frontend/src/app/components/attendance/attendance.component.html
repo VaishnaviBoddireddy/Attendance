@@ -1,1 +1,84 @@
+<div class="attendance-container">
+  <div class="header">
+    <h2>Attendance Management</h2>
+    <p>Track student daily attendance, late check-ins, and manual adjustments.</p>
+  </div>
 
+  <!-- Summary Cards -->
+  <div class="stats-grid">
+    <div class="stat-card total">
+      <h3>Total Students</h3>
+      <p class="count">{{ attendanceList.length }}</p>
+    </div>
+    <div class="stat-card present">
+      <h3>Present</h3>
+      <p class="count">{{ presentCount }}</p>
+    </div>
+    <div class="stat-card late">
+      <h3>Late Entries</h3>
+      <p class="count">{{ lateCount }}</p>
+    </div>
+    <div class="stat-card absent">
+      <h3>Absent</h3>
+      <p class="count">{{ absentCount }}</p>
+    </div>
+  </div>
+
+  <!-- Filter & Controls Toolbar -->
+  <div class="toolbar">
+    <input 
+      type="text" 
+      placeholder="Search student or roll number..." 
+      [(ngModel)]="searchQuery" 
+      class="search-input"
+    />
+
+    <input 
+      type="date" 
+      [(ngModel)]="selectedDate" 
+      class="date-input"
+    />
+
+    <select [(ngModel)]="selectedStatus" class="filter-select">
+      <option value="All">All Statuses</option>
+      <option value="Present">Present</option>
+      <option value="Late">Late</option>
+      <option value="Absent">Absent</option>
+    </select>
+  </div>
+
+  <!-- Attendance Table -->
+  <div class="table-card">
+    <table class="attendance-table">
+      <thead>
+        <tr>
+          <th>Roll No</th>
+          <th>Student Name</th>
+          <th>Time In</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of filteredRecords">
+          <td><strong>{{ record.rollNumber }}</strong></td>
+          <td>{{ record.studentName }}</td>
+          <td>{{ record.timeIn }}</td>
+          <td>
+            <span class="badge" [ngClass]="record.status.toLowerCase()">
+              {{ record.status }}
+            </span>
+          </td>
+          <td class="action-btns">
+            <button class="btn btn-present" (click)="updateStatus(record, 'Present')">Present</button>
+            <button class="btn btn-late" (click)="updateStatus(record, 'Late')">Late</button>
+            <button class="btn btn-absent" (click)="updateStatus(record, 'Absent')">Absent</button>
+          </td>
+        </tr>
+        <tr *ngIf="filteredRecords.length === 0">
+          <td colspan="5" class="empty-state">No attendance records found matching your filters.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
