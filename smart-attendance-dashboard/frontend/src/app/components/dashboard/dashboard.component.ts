@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AttendanceService } from '../../services/attendance.service';
 import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
