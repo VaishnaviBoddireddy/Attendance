@@ -27,10 +27,6 @@ export const routes: Routes = [
     loadComponent: () => import('./components/qr-scanner/qr-scanner.component').then(m => m.QrScannerComponent)
   },
   {
-    path: 'reports',
-    loadComponent: () => import('./components/reports/reports.component').then(m => m.ReportsComponent)
-  },
-  {
     path: '**',
     redirectTo: 'login'
   }
