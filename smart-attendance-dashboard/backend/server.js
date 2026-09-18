@@ -5,7 +5,10 @@ const connectDB = require('./config/db');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://frontend-gamma-swart-54.vercel.app'],
+  credentials: true
+}));
 app.use(express.json());
 
 connectDB();
