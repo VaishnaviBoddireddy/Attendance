@@ -7,7 +7,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class AttendanceService {
-  private baseUrl = 'http://localhost:3000/api';
+  private baseUrl = 'https://attendance-three-pi.vercel.app';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
